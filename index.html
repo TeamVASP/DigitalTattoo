@@ -3,43 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxury Tattoo Studio</title>
+    <title>Digital Tattoo - Tattoo Generator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Luxury Tattoo Studio</h1>
-            <p>Design your dream tattoo!</p>
-        </header>
-        <div id="options">
-            <div>
-                <label for="style">Tattoo Style:</label>
-                <select id="style" name="style" required>
-                    <option value="minimal">Minimalist</option>
-                    <option value="traditional">Traditional</option>
-                    <option value="geometric">Geometric</option>
-                    <option value="watercolor">Watercolor</option>
-                </select>
-            </div>
-            <div>
-                <label for="size">Tattoo Size:</label>
-                <select id="size" name="size" required>
-                    <option value="small">Small</option>
-                    <option value="medium">Medium</option>
-                    <option value="large">Large</option>
-                </select>
-            </div>
-            <div>
-                <label for="design">Your Tattoo Design:</label>
-                <textarea id="design" name="design" placeholder="Describe your ideal tattoo design"></textarea>
-            </div>
+    <div class="banner">
+        <h1>Digital Tattoo</h1>
+        <p>Get Inked or Die Naked</p>
+    </div>
+
+    <div class="section" id="personal-tattoo">
+        <h2>Personal Tattoo</h2>
+        <p>Embody your journey, express your passions, and wear your story on your skin – a personal tattoo, an artful autobiography.</p>
+        <div class="labels">
+            <button onclick="showOptions('Minimalist')">Minimalist</button>
+            <button onclick="showOptions('Traditional')">Traditional</button>
+            <button onclick="showOptions('Geometric')">Geometric</button>
+        </div>
+        <div id="options-container" class="hidden">
+            <button onclick="showPreferences('Sporty')">Sporty</button>
+            <button onclick="showPreferences('Religious')">Religious</button>
+            <button onclick="showPreferences('Abstract')">Abstract</button>
+        </div>
+        <div id="preferences-container" class="hidden">
+            <label for="preference">Describe your preference:</label>
+            <textarea id="preference"></textarea>
             <button onclick="generateTattoo()">Generate Tattoo</button>
         </div>
         <div id="generatedTattoo"></div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+
+    <div class="section" id="my-office">
+        <h2>My Office</h2>
+        <p>Beyond the desks and buzzing meetings, the office is a canvas where innovation meets collaboration.</p>
+        <button onclick="showWiproDetails()">Explore My Office</button>
+    </div>
+
+    <div class="section" id="my-health">
+        <h2>My Health</h2>
+        <p>Wearable innovation meets the art of self-awareness: a tattoo that not only echoes your style but whispers your health updates when scanned.</p>
+        <button onclick="scanTattoo()">Scan My Tattoo</button>
+        <div id="health-results" class="hidden">
+            <p>Heart: 82 beats per minute</p>
+            <p>Blood Pressure: 90/60mmHg and 120/80mmHg</p>
+            <p>SpO2: 96.3%</p>
+            <p>Sugar Level: Under Control</p>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
