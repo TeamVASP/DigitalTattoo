@@ -1,64 +1,43 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to bottom, #251e1e, #221d1d, #1e1b1c, #1b191b, #171617), url('luxury-tattoo-studio-background.jpg');
-    background-size: cover;
-    background-position: center;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.banner {
+    background-color: #000;
     color: #fff;
     text-align: center;
     padding: 20px;
-    margin: 0;
+    animation: bannerAnimation 2s infinite;
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
+@keyframes bannerAnimation {
+    0% { background-color: #000; }
+    50% { background-color: #333; }
+    100% { background-color: #000; }
 }
 
-header {
-    margin-bottom: 20px;
+.section {
+    padding: 40px;
+    text-align: center;
 }
 
-header h1 {
-    font-size: 2.5em;
-    margin-bottom: 5px;
-}
-
-header p {
-    font-size: 1.2em;
-}
-
-#options {
-    margin-bottom: 20px;
-}
-
-#generatedTattoo img {
-    max-width: 100%;
-    margin-top: 20px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-select, textarea {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-button {
-    background-color: #4caf50;
+.labels button,
+.preferences-container button {
+    margin: 5px;
+    padding: 10px;
+    background-color: #333;
     color: #fff;
-    padding: 10px 20px;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #45a049;
+.labels button:hover,
+.preferences-container button:hover {
+    background-color: #555;
+}
+
+.hidden {
+    display: none;
 }
