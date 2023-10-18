@@ -1,20 +1,28 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    text-align: center;
-    padding: 20px;
+document.addEventListener('DOMContentLoaded', async () => {
+    await loadModel();
+});
+
+let model;
+
+async function loadModel() {
+    model = await mobilenet.load();
 }
 
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-}
+function generateTattoo() {
+    const style = document.getElementById('style').value;
+    const size = document.getElementById('size').value;
+    const design = document.getElementById('design').value;
 
-#options {
-    margin-bottom: 20px;
-}
+    // Here, you would use user preferences and input design to guide the model and generate an image.
+    // This is a placeholder for demonstration purposes.
 
-#generatedTattoo img {
-    max-width: 100%;
-    margin-top: 20px;
+    const placeholderImageUrl = 'https://placekitten.com/300/300';
+
+    const generatedTattooContainer = document.getElementById('generatedTattoo');
+    generatedTattooContainer.innerHTML = '';
+
+    const tattooImage = document.createElement('img');
+    tattooImage.src = placeholderImageUrl;
+    tattooImage.alt = 'Generated Tattoo';
+    generatedTattooContainer.appendChild(tattooImage);
 }
