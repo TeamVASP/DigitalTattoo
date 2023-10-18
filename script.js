@@ -1,62 +1,47 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to bottom, #251e1e, #221d1d, #1e1b1c, #1b191b, #171617);
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    margin: 0;
+function showOptions(label) {
+    document.getElementById('options-container').classList.remove('hidden');
+    // Additional logic to handle label selection
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
+function showPreferences(option) {
+    document.getElementById('preferences-container').classList.remove('hidden');
+    // Additional logic to handle option selection
 }
 
-header {
-    margin-bottom: 20px;
+function generateTattoo() {
+    const userPreference = document.getElementById('preference').value;
+
+    // Replace the following placeholder URLs with real tattoo image URLs based on the user's preference
+    const tattooImageUrls = {
+        'Sporty': 'https://media.istockphoto.com/id/1285647587/vector/vintage-monochrome-gambling-emblems.jpg?s=612x612&w=0&k=20&c=M6Fvui01ROhEp_qhbKyvIsBXh6JPmYiTet8qS9oKQuE=',
+        'Religious': 'https://stylesatlife.com/wp-content/uploads/2022/07/Om-Tattoo-Designs-1.jpg',
+        'Abstract': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9cEqXBdB37sMdzU_cFcdzAfQrZ2LGIozBbQ&usqp=CAU'
+    };
+
+    // Use the user's preference to fetch the corresponding tattoo image URL
+    const selectedImageUrl = tattooImageUrls[userPreference];
+
+    // Display the generated tattoo image
+    displayGeneratedTattoo(selectedImageUrl);
 }
 
-header h1 {
-    font-size: 2.5em;
-    margin-bottom: 5px;
+function showWiproDetails() {
+    // Logic to show Wipro details
+    alert("Your access areas are Wipro Sarjapur office and Wipro EC office.");
 }
 
-header p {
-    font-size: 1.2em;
+function scanTattoo() {
+    // Logic to simulate scanning the tattoo
+    const healthResultsContainer = document.getElementById('health-results');
+    healthResultsContainer.classList.remove('hidden');
 }
 
-#options {
-    margin-bottom: 20px;
-}
+function displayGeneratedTattoo(imageUrl) {
+    const generatedTattooContainer = document.getElementById('generatedTattoo');
+    generatedTattooContainer.innerHTML = '';
 
-#generatedTattoo img {
-    max-width: 100%;
-    margin-top: 20px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-select, textarea {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-button {
-    background-color: #4caf50;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #45a049;
+    const tattooImage = document.createElement('img');
+    tattooImage.src = imageUrl;
+    tattooImage.alt = 'Generated Tattoo';
+    generatedTattooContainer.appendChild(tattooImage);
 }
